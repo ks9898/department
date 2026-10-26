@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Department of Computer Science, XYZ University</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{--deep:#0c3b42;--deep2:#12525b;--coral:#ff6f59;--mint:#7ee0c8;--bg:#eef7f6;--card:#fff;--tx:#12303a;--mut:#4d6a72;--line:#cfe3e1;
+--hd:'Sora','Trebuchet MS',sans-serif;--bd:'Source Sans 3','Segoe UI',Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08252b;--card:#0e3a42;--tx:#e8f6f4;--mut:#a5c8c9;--line:#1f565d}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:18px/1.65 var(--bd)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--deep);z-index:51}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--deep);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:700 17px/1.1 var(--hd);white-space:nowrap}
+.brand i{width:36px;height:36px;border-radius:10px;background:var(--coral);display:grid;place-items:center;font:800 14px var(--hd);font-style:normal;color:#fff}
+.brand small{display:block;font:400 12.5px var(--bd);color:#a9d6d3}
+nav{display:flex;gap:2px;overflow-x:auto}
+nav a{padding:8px 13px;border-radius:8px;color:#d3ecea;text-decoration:none;font-weight:600;font-size:15.5px;white-space:nowrap}
+nav a:hover,nav a:focus-visible{background:var(--deep2);color:#fff;outline:none}
+.hero{background:var(--deep);color:#fff;padding:56px 0 84px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+h1{font:800 clamp(34px,5.6vw,58px)/1.06 var(--hd);margin:0 0 8px;letter-spacing:-.02em}
+.uni{font:600 20px var(--hd);color:var(--mint);margin:0 0 18px}
+.hero p{color:#bfe0de;max-width:48ch;margin:0 0 28px}
+.btn{display:inline-block;padding:13px 26px;border-radius:10px;border:2px solid var(--coral);background:var(--coral);color:#fff;font:700 16px var(--bd);text-decoration:none;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.g{background:transparent;border-color:#3f7f86;margin-left:8px}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+.net{width:100%;max-width:420px;margin:auto;display:block}
+.net line{stroke:#2f7a82;stroke-width:1.6}
+.net circle{fill:var(--mint)}
+.net circle.h{fill:var(--coral)}
+.net .p{animation:pu 3s ease-in-out infinite}
+.net .p:nth-of-type(2n){animation-delay:1s}.net .p:nth-of-type(3n){animation-delay:2s}
+@keyframes pu{50%{opacity:.25}}
+.strip{background:var(--coral);color:#fff;font-weight:700}
+.strip .wrap{display:flex;gap:10px 28px;flex-wrap:wrap;padding-block:12px;font-size:16px}
+section{padding:64px 0}
+h2{font:800 clamp(28px,4vw,38px)/1.1 var(--hd);margin:0 0 10px;letter-spacing:-.01em}
+.lead{color:var(--mut);max-width:60ch;margin:0 0 30px}
+.grid{display:grid;gap:18px}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{font:700 20px/1.25 var(--hd);margin:0 0 6px}
+.card p{margin:0;color:var(--mut);font-size:16.5px}
+.prog{border-top:5px solid var(--deep2)}
+.prog.pg{border-top-color:var(--coral)}
+.lvl{display:inline-block;font:700 13px var(--bd);padding:2px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);margin-bottom:10px;color:var(--mut)}
+.alt{background:var(--card);border-block:1px solid var(--line)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.about .card{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px;padding:18px 20px}
+.about .card:last-child{margin-bottom:0}
+.ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--deep);color:var(--mint);display:grid;place-items:center;font-size:22px}
+.srch{display:block;width:100%;max-width:340px;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--tx);font:17px var(--bd);margin-bottom:22px}
+.fac{text-align:center}
+.av{width:84px;height:84px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font:800 28px var(--hd);color:#fff;background:linear-gradient(135deg,var(--deep2),var(--deep))}
+.fac:nth-child(2) .av{background:linear-gradient(135deg,var(--coral),#d9462f)}
+.fac:nth-child(3) .av{background:linear-gradient(135deg,#2a9d8f,var(--deep2))}
+.role{color:var(--mut);font-weight:600;margin-bottom:10px}
+.chip{display:inline-block;padding:4px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-weight:700;font-size:15px}
+ol.nt{list-style:none;margin:0;padding:0;counter-reset:n}
+ol.nt li{counter-increment:n;display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line);font-weight:600}
+ol.nt li::before{content:counter(n);flex:none;width:34px;height:34px;border-radius:50%;background:var(--coral);color:#fff;display:grid;place-items:center;font:800 15px var(--hd)}
+form{display:grid;gap:12px}
+label{display:grid;gap:5px;font-weight:700;font-size:15px}
+input,textarea{width:100%;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--tx);font:17px var(--bd)}
+textarea{min-height:96px;resize:vertical}
+#m{margin:0;font-weight:700;color:#1f9d8a;min-height:1.4em}
+address{font-style:normal;display:grid;gap:4px}
+address a{color:var(--coral);font-weight:700}
+footer{background:var(--deep);color:#a9d6d3;text-align:center;padding:26px 20px calc(26px + env(safe-area-inset-bottom,0px));font-size:15.5px}
+footer a{color:var(--mint);text-decoration:none;margin:0 8px}
+@media(max-width:860px){.hero .wrap,.two{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr}.net{max-width:300px}header .wrap{height:auto;flex-direction:column;padding-block:8px;gap:2px}section{padding:48px 0}.hero{padding:40px 0 56px}}
+@media(max-width:480px){.g4{grid-template-columns:1fr}.btn.g{margin:10px 0 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#home"><i>CS</i><span>Department of Computer Science<small>XYZ University</small></span></a>
+<nav aria-label="Main"><a href="#home">Home</a><a href="#about">About Department</a><a href="#faculty">Faculty</a><a href="#courses">Courses</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<div class="hero" id="home"><div class="wrap">
+<div>
+<h1>Department of Computer Science</h1>
+<div class="uni">XYZ University, Jaipur</div>
+<p>The Department of Computer Science provides quality education and develops technical and problem-solving skills among students.</p>
+<a class="btn" href="#courses">Explore programs</a><a class="btn g" href="#faculty">Meet the faculty</a>
+</div>
+<svg class="net" viewBox="0 0 300 260" role="img" aria-label="Network of connected nodes">
+<g><line x1="40" y1="130" x2="110" y2="50"/><line x1="40" y1="130" x2="110" y2="130"/><line x1="40" y1="130" x2="110" y2="210"/><line x1="110" y1="50" x2="190" y2="90"/><line x1="110" y1="50" x2="190" y2="170"/><line x1="110" y1="130" x2="190" y2="90"/><line x1="110" y1="130" x2="190" y2="170"/><line x1="110" y1="210" x2="190" y2="90"/><line x1="110" y1="210" x2="190" y2="170"/><line x1="190" y1="90" x2="262" y2="130"/><line x1="190" y1="170" x2="262" y2="130"/></g>
+<circle class="p" cx="40" cy="130" r="10"/><circle class="p" cx="110" cy="50" r="10"/><circle class="p" cx="110" cy="130" r="10"/><circle class="p" cx="110" cy="210" r="10"/><circle class="p" cx="190" cy="90" r="10"/><circle class="p" cx="190" cy="170" r="10"/><circle class="h" cx="262" cy="130" r="14"/>
+</svg>
+</div></div>
+<div class="strip"><div class="wrap"><span>4 programs</span><span>3 faculty specializations</span><span>Jaipur, Rajasthan</span></div></div>
+
+<section class="about" id="about"><div class="wrap two">
+<div><h2>Welcome to the Department</h2><p class="lead">We build technical depth and problem-solving habits that last beyond the classroom.</p></div>
+<div>
+<div class="card"><div class="ic">⌨</div><div><h3>Strong technical base</h3><p>Programming, systems and data are taught through regular practice.</p></div></div>
+<div class="card"><div class="ic">🧩</div><div><h3>Problem solving</h3><p>Assignments and projects train students to break hard problems into steps.</p></div></div>
+<div class="card"><div class="ic">🎤</div><div><h3>Seminars and exams</h3><p>Seminars add to regular term assessments through the year.</p></div></div>
+</div></div></section>
+
+<section class="alt" id="courses"><div class="wrap">
+<h2>Programs Offered</h2><p class="lead">Undergraduate and postgraduate paths in computing.</p>
+<div class="grid g4">
+<div class="card prog"><span class="lvl">Undergraduate</span><h3>BCA</h3><p>Bachelor of Computer Applications.</p></div>
+<div class="card prog pg"><span class="lvl">Postgraduate</span><h3>MCA</h3><p>Master of Computer Applications.</p></div>
+<div class="card prog"><span class="lvl">Undergraduate</span><h3>B.Tech Computer Science</h3><p>Engineering degree in computer science.</p></div>
+<div class="card prog pg"><span class="lvl">Postgraduate</span><h3>M.Tech Computer Science</h3><p>Advanced study and research.</p></div>
+</div></div></section>
+
+<section id="faculty"><div class="wrap">
+<h2>Faculty Members</h2><p class="lead">Search by name, designation or specialization.</p>
+<input class="srch" id="q" type="search" placeholder="Search faculty" aria-label="Search faculty">
+<div class="grid g3" id="fl">
+<div class="card fac"><div class="av">AS</div><h3>Dr. Amit Sharma</h3><div class="role">Professor</div><span class="chip">Artificial Intelligence</span></div>
+<div class="card fac"><div class="av">NV</div><h3>Dr. Neha Verma</h3><div class="role">Associate Professor</div><span class="chip">Data Science</span></div>
+<div class="card fac"><div class="av">RS</div><h3>Mr. Rahul Singh</h3><div class="role">Assistant Professor</div><span class="chip">Computer Networks</span></div>
+</div><p id="none" class="lead" hidden>No faculty match your search.</p>
+</div></section>
+
+<section class="alt"><div class="wrap two">
+<div><h2>Important Notice</h2><p class="lead">Please read before the term begins.</p></div>
+<ol class="nt">
+<li>Mid-term examinations will begin from 15 September.</li>
+<li>Students must submit their assignments before the deadline.</li>
+<li>Registration for the seminar is now open.</li>
+</ol></div></section>
+
+<section id="contact"><div class="wrap two">
+<div><h2>Contact Us</h2><p class="lead">Write to the department office.</p>
+<address><b>Department of Computer Science</b>XYZ University<br>Jaipur, Rajasthan<br>Email: <a href="mailto:cs@xyzuniversity.edu">cs@xyzuniversity.edu</a></address></div>
+<div class="card"><form id="f" novalidate>
+<label>Name<input id="n" autocomplete="name"></label>
+<label>Email<input id="e" type="email" autocomplete="email"></label>
+<label>Message<textarea id="t"></textarea></label>
+<button class="btn" type="submit">Send message</button><p id="m" role="status"></p></form></div>
+</div></section>
+</main>
+
+<footer><p><a href="#home">Home</a><a href="#about">About Department</a><a href="#faculty">Faculty</a><a href="#courses">Courses</a><a href="#contact">Contact</a></p><p>© 2026 XYZ University</p></footer>
+
+<script>
+(function(){
+var q=document.getElementById('q'),cs=document.querySelectorAll('#fl .fac'),no=document.getElementById('none');
+q.addEventListener('input',function(){
+ var v=q.value.toLowerCase(),c=0;
+ cs.forEach(function(x){var h=x.textContent.toLowerCase().indexOf(v)>-1;x.style.display=h?'':'none';if(h)c++});
+ no.hidden=c>0;
+});
+document.getElementById('f').addEventListener('submit',function(ev){
+ ev.preventDefault();
+ var n=document.getElementById('n').value.trim(),e=document.getElementById('e').value.trim(),m=document.getElementById('m');
+ if(!n||!/^\S+@\S+\.\S+$/.test(e)){m.style.color='#d6336c';m.textContent='Enter your name and a valid email.';return}
+ m.style.color='';m.textContent='Thank you, '+n+'. Your message is ready to send.';this.reset();
+});
+})();
+</script>
+</body>
+</html>
